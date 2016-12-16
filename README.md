@@ -53,3 +53,6 @@ I've set this up so that I have the following structure
 	<project-root>/docker-devenv/docker/nginx   # docker setup for the separate nginx container
 	<project-root>/docker-devenv/docker/php     # docker setup for the separate php container
 
+## Connecting to the DB from PHP
+
+Use the hosting `db` with port `3306` and credentials from the [`docker-compose.yml`](docker-compose.yml) file.
