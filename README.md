@@ -55,4 +55,4 @@ I've set this up so that I have the following structure
 
 ## Connecting to the DB from PHP
 
-Use the hosting `db` with port `3306` and credentials from the [`docker-compose.yml`](docker-compose.yml) file.
+Use the host name `db` with port `3306` and credentials from the [`docker-compose.yml`](docker-compose.yml) file.
