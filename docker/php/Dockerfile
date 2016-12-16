@@ -20,6 +20,7 @@ RUN yum -y install \
     php \
     php-fpm \
     php-cli \
+    php-ldap \
     php-mbstring \
     php-mcrypt \
     php-mysql \
