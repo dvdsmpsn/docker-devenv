@@ -25,6 +25,7 @@ RUN yum -y install \
     php-mcrypt \
     php-mysql \
     php-xml \
+    php-gd \
     msmtp \
     && yum -y update bash \
     && rm -rf /var/cache/yum/* \
