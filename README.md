@@ -23,6 +23,7 @@ git clone git@gitlab.com:uon-pd/some-example-php-project.git     # assuming this
 mv some-example-php-project public                               # rename the cloned project's directory
 cd ..
 git clone git@gitlab.com:uon-pd/docker-devenv.git
+cd docker-devenv
 git checkout feature/support-separate-repo-for-php-code
 ```
 
