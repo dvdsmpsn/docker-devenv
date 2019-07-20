@@ -1,35 +1,35 @@
-version: '2'
+version: "2"
 services:
+  centos-nginx:
+    build: docker/nginx
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      - VIRTUAL_PORT=80
+    volumes:
+      # - app:/app
+      - ../app:/app
+    volumes_from:
+      - centos-php
 
-    centos-nginx:
-        build: docker/nginx
-        restart: always
-        ports:
-            - 80:80
-        environment:
-            - VIRTUAL_PORT=80
-        volumes:
-            - ../app:/app
-        volumes_from:
-            - centos-php
+  centos-php:
+    build: docker/php
+    restart: always
+    volumes:
+      - ../app:/app
+    links:
+      - db
 
-    centos-php:
-        build: docker/php
-        restart: always
-        volumes:
-            - ../app:/app
-        links:
-            - db
-            
-    db:
-        image: mysql:5.5
-        restart: always
-        ports:
-            - 3306:3306
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: my_development_database
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
-        volumes:
-            - ./docker/.data/db:/var/lib/mysql
+  db:
+    image: mysql:5.5
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: my_development_database
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    volumes:
+      - ./docker/.data/db:/var/lib/mysql
