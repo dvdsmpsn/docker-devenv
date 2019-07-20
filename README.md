@@ -2,13 +2,28 @@
 
 This doc should get you started with anything you need t quickly start things up
 
-Create a new folder structure:
+## Getting started
+
+You will need a new folder structure:
 
 ```
 __PROJECT_ROOT__/
 __PROJECT_ROOT__/app                # To contain all your app's source code
 __PROJECT_ROOT__/app/public         # The root of your PHP app
 __PROJECT_ROOT__/docker-devenv      # The root of this repository (this README is located in this folder)
+```
+
+YOu can achieve this wityh the following...
+
+```
+mkdir exampleproject
+cd exampleproject
+mkdir app
+git clone git@gitlab.com:uon-pd/some-example-php-project.git     # assuming this is the correct URL
+mv some-example-php-project public                               # rename the cloned project's directory
+cd ..
+git clone git@gitlab.com:uon-pd/docker-devenv.git
+git checkout feature/support-separate-repo-for-php-code
 ```
 
 ## Make sure Docker is running first
